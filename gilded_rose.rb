@@ -1,6 +1,7 @@
 require './item.rb'
 
 class GildedRose
+  attr_accessor :items
 
   @items = []
 
