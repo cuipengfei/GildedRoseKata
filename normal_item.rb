@@ -10,6 +10,7 @@ class NormalItem < Item
   end
 
   def dayPass
+    alterChangeRate
     changeDate
     changeQuality
   end
@@ -27,13 +28,13 @@ class NormalItem < Item
   def changeDate
     if self.sell_in>0
       self.sell_in-=1
-    else
-      alterChangeRate
     end
   end
 
   def alterChangeRate
-    @changeRate=2
+    if self.sell_in==0
+      @changeRate=2
+    end
   end
 
 end
