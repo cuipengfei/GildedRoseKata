@@ -18,4 +18,12 @@ describe NormalItem do
     expect(item.sell_in).to eq(0)
   end
 
+  it "normal item should never have quality less than zero" do
+    item = NormalItem.new("item a", 5, 4)
+    5.times { |num| item.dayPass }
+
+    expect(item.quality).to eq(0)
+    expect(item.sell_in).to eq(0)
+  end
+
 end
