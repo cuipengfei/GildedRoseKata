@@ -11,4 +11,12 @@ describe NormalItem do
     expect(item.sell_in).to eq(4)
   end
 
+  it "aged item should not increase to more than 50" do
+    item = AgedItem.new("item b", 5, 4)
+    100.times { item.dayPass }
+
+    expect(item.quality).to eq(50)
+    expect(item.sell_in).to eq(0)
+  end
+
 end
