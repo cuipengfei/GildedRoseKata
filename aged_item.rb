@@ -10,8 +10,12 @@ class AgedItem < NormalItem
 
   def changeQuality
     if self.quality < 50
-      self.quality+=1
+      self.quality+=self.changeRate
     end
+  end
+
+  def alterChangeRate
+    @changeRate=1
   end
 
 end

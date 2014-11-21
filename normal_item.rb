@@ -2,6 +2,8 @@ require './item.rb'
 
 class NormalItem < Item
 
+  attr_accessor :changeRate
+
   def initialize (name, sell_in, quality)
     super(name, sell_in, quality)
     @changeRate = 1
@@ -26,8 +28,12 @@ class NormalItem < Item
     if self.sell_in>0
       self.sell_in-=1
     else
-      @changeRate=2
+      alterChangeRate
     end
+  end
+
+  def alterChangeRate
+    @changeRate=2
   end
 
 end
