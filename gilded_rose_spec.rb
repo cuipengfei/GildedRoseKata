@@ -52,8 +52,8 @@ describe GildedRose do
     5.times { |num| subject.update_quality }
     expect(subject.items[4].quality).to eq(50)
 
-    # 1.times { |num| subject.update_quality }
-    # expect(subject.items[4].quality).to eq(0)
+    1.times { |num| subject.update_quality }
+    expect(subject.items[4].quality).to eq(0)
   end
 
 end
