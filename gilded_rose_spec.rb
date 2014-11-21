@@ -7,5 +7,8 @@ describe GildedRose do
     subject.update_quality
   end
 
+  it "hello shoud be hello" do
+    expect("hello").to eq("hello")
+  end
 
 end
