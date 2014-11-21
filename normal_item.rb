@@ -4,29 +4,29 @@ class NormalItem < Item
 
   def initialize (name, sell_in, quality)
     super(name, sell_in, quality)
-    @decreaseBy = 1
+    @changeRate = 1
   end
 
   def dayPass
-    decreaseDate
-    decreaseQuality
+    changeDate
+    changeQuality
   end
 
   private
 
-  def decreaseQuality
-    if self.quality > @decreaseBy
-      self.quality-=@decreaseBy
+  def changeQuality
+    if self.quality > @changeRate
+      self.quality-=@changeRate
     else
       self.quality=0
     end
   end
 
-  def decreaseDate
+  def changeDate
     if self.sell_in>0
       self.sell_in-=1
     else
-      @decreaseBy=2
+      @changeRate=2
     end
   end
 
