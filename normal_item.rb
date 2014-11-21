@@ -12,7 +12,7 @@ class NormalItem < Item
     changeQuality
   end
 
-  private
+  protected
 
   def changeQuality
     if self.quality > @changeRate
