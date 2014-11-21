@@ -33,7 +33,7 @@ class NormalItem < Item
 
   def alterChangeRate
     if self.sell_in==0
-      @changeRate=2
+      @changeRate*=2
     end
   end
 
