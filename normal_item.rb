@@ -7,7 +7,11 @@ class NormalItem < Item
   end
 
   def dayPass
-    self.sell_in-=1
-    self.quality-=1
+    if self.sell_in==0
+      self.quality-=2
+    else
+      self.sell_in-=1
+      self.quality-=1
+    end
   end
 end

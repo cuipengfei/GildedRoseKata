@@ -10,4 +10,12 @@ describe NormalItem do
     expect(item.sell_in).to eq(2)
   end
 
+  it "normal item should descrease twice as fast after sell in date" do
+    item = NormalItem.new("item a", 5, 10)
+    6.times { |num| item.dayPass }
+
+    expect(item.quality).to eq(3)
+    expect(item.sell_in).to eq(0)
+  end
+
 end
